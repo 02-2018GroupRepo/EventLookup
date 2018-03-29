@@ -15,6 +15,7 @@ public class EventDao {
 		events.put("004", new Event("Theater", "Wichita", "Philadelphia"));
 		
 	}
+	
 	public Event getEventById(String id) {
 		Event event = new Event();
 		for (Map.Entry<String, Event> entry : events.entrySet()) {
