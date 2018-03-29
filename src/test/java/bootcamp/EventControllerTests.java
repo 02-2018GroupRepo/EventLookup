@@ -18,21 +18,21 @@ import org.springframework.test.web.servlet.MockMvc;
 @SpringBootTest
 @AutoConfigureMockMvc
 
-public class GreetingControllerTests {
+public class EventControllerTests {
 
-	/*
+	
     @Autowired
     private MockMvc mockMvc;
 
     
     @Test
-    public void noParamEventShouldReturnDefaultMessage() throws Exception {
+    public void noParamEventShouldReturnDefaultEvent() throws Exception {
 
         this.mockMvc.perform(get("/event")).andDo(print()).andExpect(status().isOk())
-                .andExpect(jsonPath("$.content").value("Georgia"));
+                .andExpect(jsonPath("$.content").value("concert"));
     }
 
-    
+    /*
     @Test
     public void paramEventShouldReturnTailoredLocation() throws Exception {
 

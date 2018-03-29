@@ -7,7 +7,6 @@ public class EventService {
 	EventDao eventDao = new EventDao();
 	
 	public Event getEventById(String id){
-		Event event = eventDao.getEventById(id);
-		return event;
+		return eventDao.getEventById(id);
 	}
 }
