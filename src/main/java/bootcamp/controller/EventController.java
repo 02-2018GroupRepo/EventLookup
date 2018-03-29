@@ -23,15 +23,13 @@ EventService eventService = new EventService();
     
     @RequestMapping("/getEvent")
     public Event getEvent(@RequestParam(value="eventId", required=true) String id) {
-        return (Event) eventDao.getEventById(id);
+        return (Event)eventService.getEventById(id);
 }
     
     @RequestMapping("/setEventLocation")
     public Event setEventLocation(@RequestParam(value = "location") String venueLocation) {
-    	Event event = new Event();
-		event.setLocation(venueLocation);
+		eventService.getEventById(id).eventDao.setLocation(venueLocation);
         return (Event) eventService.getEventById(id);
     }
    
-    
 }
