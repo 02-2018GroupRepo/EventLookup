@@ -1,6 +1,7 @@
 package bootcamp.controler;
 import bootcamp.dao.EventDao;
 import bootcamp.model.Event;
+import bootcamp.service.EventService;
 
 import java.util.concurrent.atomic.AtomicLong;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -9,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class EventController {
-EventDao eventDao = new EventDao();
+EventService eventService = new EventService();
     
 
 /*    @RequestMapping("/greeting")
@@ -19,6 +20,6 @@ EventDao eventDao = new EventDao();
     
     @RequestMapping("/getEvent")
     public Event getEvent(@RequestParam(value="eventId", required=true) String id) {
-        return (Event) eventDao.getEventById(id);
+        return (Event) eventService.getEventById(id);
     }
 }
