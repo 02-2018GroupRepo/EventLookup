@@ -1,6 +1,6 @@
 package bootcamp;
 
-/*
+
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
@@ -17,11 +17,10 @@ import org.springframework.test.web.servlet.MockMvc;
 @RunWith(SpringRunner.class)
 @SpringBootTest
 @AutoConfigureMockMvc
-*/
 
 public class GreetingControllerTests {
 
-	/*
+	
     @Autowired
     private MockMvc mockMvc;
 
@@ -30,10 +29,10 @@ public class GreetingControllerTests {
     public void noParamEventShouldReturnDefaultMessage() throws Exception {
 
         this.mockMvc.perform(get("/event")).andDo(print()).andExpect(status().isOk())
-                .andExpect(jsonPath("$.content"));
+                .andExpect(jsonPath("$.content").value("concert"));
     }
 
-    
+    /*
     @Test
     public void paramGreetingShouldReturnTailoredMessage() throws Exception {
 
