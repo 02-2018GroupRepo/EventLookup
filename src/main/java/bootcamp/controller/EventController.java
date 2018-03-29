@@ -30,5 +30,4 @@ EventService eventService = new EventService();
 		eventService.getEventById(id).setLocation(venueLocation);
         return (Event)eventService.getEventById(id);
     }
-   
 }
