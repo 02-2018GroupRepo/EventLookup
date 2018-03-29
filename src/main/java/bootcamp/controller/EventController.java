@@ -1,4 +1,5 @@
 package bootcamp.controller;
+import bootcamp.dao.EventDao;
 import bootcamp.model.Event;
 
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -7,15 +8,25 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class EventController {
-
+EventDao eventDao = new EventDao();
     
    @RequestMapping("/event")
     public Event event() {
         return new Event();
-    }
+   }
+   
+/*    @RequestMapping("/greeting")
+    public Event greeting(@RequestParam(value="name", defaultValue="World") String name) {
+        return new Event();
+    }*/
+    
+    @RequestMapping("/getEvent")
+    public Event getEvent(@RequestParam(value="eventId", required=true) String id) {
+        return (Event) eventDao.getEventById(id);
+}
     
     @RequestMapping("/setEventLocation")
-    public Event event (@RequestParam(value = "location") String venueLocation) {
+    public Event setEventLocation(@RequestParam(value = "location") String venueLocation) {
     	Event event = new Event();
 		event.setLocation(venueLocation);
     	return event;

@@ -1,5 +1,5 @@
 package bootcamp.service;
 
-public class Service {
+public class EventService {
 
 }

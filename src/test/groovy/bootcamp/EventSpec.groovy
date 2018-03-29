@@ -22,7 +22,6 @@ class EventSpec extends Specification {
 		String newLocation = "location"
 		and: "an event"
 		Event concert = new Event();
-		
 		when: "location is set"
 		concert.setLocation(newLocation)
 		then: "location changes "

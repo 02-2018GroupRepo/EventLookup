@@ -1,16 +1,27 @@
 package bootcamp.model;
 
 public class Event {
+	
 	private String name;
 	private String description;
 	private String location;
+	private int maxGuests;
+	
 	
 	public Event() {
-		name= "concert";
-		description="two bands";
-		location="Georgia";
+		name = "name test text";
+		description = "this is an event description";
+		location = "a place on earth";
+		maxGuests = 25;
 	}
 	
+	public Event(String name, String description, String location) {
+	
+		this.name= name;
+		this.description=description;
+		this.location=location;
+	}
+
 	public String getName() {
 		return name;
 	}
@@ -25,5 +36,9 @@ public class Event {
 
 	public void setLocation(String location) {
 		this.location = location;
+	}
+	
+	public void setMaxGuests(int capacity) {
+		this.maxGuests = capacity;
 	}
 }
