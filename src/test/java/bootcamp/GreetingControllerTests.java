@@ -29,17 +29,16 @@ public class GreetingControllerTests {
     public void noParamEventShouldReturnDefaultMessage() throws Exception {
 
         this.mockMvc.perform(get("/event")).andDo(print()).andExpect(status().isOk())
-                .andExpect(jsonPath("$.content").value("concert"));
+                .andExpect(jsonPath("$.content").value("Georgia"));
     }
 
-    /*
+    
     @Test
-    public void paramGreetingShouldReturnTailoredMessage() throws Exception {
+    public void paramEventShouldReturnTailoredLocation() throws Exception {
 
-        this.mockMvc.perform(get("/greeting").param("name", "Spring Community"))
+        this.mockMvc.perform(get("/event").param("location", "test"))
                 .andDo(print()).andExpect(status().isOk())
-                .andExpect(jsonPath("$.content").value("Hello, Spring Community!"));
+                .andExpect(jsonPath("$.content").value("test"));
     }
-    */
 
 }
