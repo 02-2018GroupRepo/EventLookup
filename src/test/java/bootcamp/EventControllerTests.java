@@ -20,7 +20,7 @@ import org.springframework.test.web.servlet.MockMvc;
 
 public class EventControllerTests {
 
-	
+	/*
     @Autowired
     private MockMvc mockMvc;
 
@@ -32,7 +32,7 @@ public class EventControllerTests {
                 .andExpect(jsonPath("$.content").value("concert"));
     }
 
-    /*
+    
     @Test
     public void paramEventShouldReturnTailoredLocation() throws Exception {
 

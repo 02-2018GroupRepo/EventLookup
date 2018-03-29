@@ -1,5 +1,4 @@
 package bootcamp.controller;
-import bootcamp.dao.EventDao;
 import bootcamp.model.Event;
 import bootcamp.service.EventService;
 
@@ -27,9 +26,9 @@ EventService eventService = new EventService();
 }
     
     @RequestMapping("/setEventLocation")
-    public Event setEventLocation(@RequestParam("location") String venueLocation, @RequestParam(value = "id") String id) {
+    public Event setEventLocation(@RequestParam("location") String venueLocation, @RequestParam(value = "id", required=true) String id) {
 		eventService.getEventById(id).setLocation(venueLocation);
-        return (Event) eventService.getEventById(id);
+        return (Event)eventService.getEventById(id);
     }
    
 }
