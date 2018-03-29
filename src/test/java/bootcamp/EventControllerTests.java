@@ -1,5 +1,6 @@
 package bootcamp;
 
+
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
@@ -16,24 +17,29 @@ import org.springframework.test.web.servlet.MockMvc;
 @RunWith(SpringRunner.class)
 @SpringBootTest
 @AutoConfigureMockMvc
-public class GreetingControllerTests {
 
+public class EventControllerTests {
+
+	
     @Autowired
     private MockMvc mockMvc;
 
+    
     @Test
-    public void noParamGreetingShouldReturnDefaultMessage() throws Exception {
+    public void noParamEventShouldReturnDefaultEvent() throws Exception {
 
-        this.mockMvc.perform(get("/greeting")).andDo(print()).andExpect(status().isOk())
-                .andExpect(jsonPath("$.content").value("Hello, World!"));
+        this.mockMvc.perform(get("/event")).andDo(print()).andExpect(status().isOk())
+                .andExpect(jsonPath("$.content").value("concert"));
     }
 
+    /*
     @Test
-    public void paramGreetingShouldReturnTailoredMessage() throws Exception {
+    public void paramEventShouldReturnTailoredLocation() throws Exception {
 
-        this.mockMvc.perform(get("/greeting").param("name", "Spring Community"))
+        this.mockMvc.perform(get("/event").param("location", "test"))
                 .andDo(print()).andExpect(status().isOk())
-                .andExpect(jsonPath("$.content").value("Hello, Spring Community!"));
+                .andExpect(jsonPath("$.content").value("test"));
     }
+    */
 
 }

@@ -1,3 +1,5 @@
-bootcamp\Application.class
-bootcamp\controler\EventController.class
+bootcamp\controller\EventController.class
+bootcamp\dao\EventDao.class
 bootcamp\model\Event.class
+bootcamp\Application.class
+bootcamp\service\EventService.class

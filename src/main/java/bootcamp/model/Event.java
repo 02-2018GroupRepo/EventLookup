@@ -4,11 +4,12 @@ public class Event {
 	
 	private String name;
 	private String description;
-	private String location;
-	private int maxGuests;
-	
+	private String location;	
 	
 	public Event() {
+		name = "concert";
+		description = "two bands";
+		location = "Georgia";
 	}
 	
 	public Event(String name, String description, String location) {
@@ -34,8 +35,4 @@ public class Event {
 		this.location = location;
 	}
 	
-	public void setMaxGuests(int capacity) {
-		this.maxGuests = capacity;
-	}
-
 }
