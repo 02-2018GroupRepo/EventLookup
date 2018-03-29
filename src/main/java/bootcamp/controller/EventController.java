@@ -1,6 +1,7 @@
 package bootcamp.controller;
 import bootcamp.dao.EventDao;
 import bootcamp.model.Event;
+import bootcamp.service.EventService;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -8,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class EventController {
-EventDao eventDao = new EventDao();
+EventService eventService = new EventService();
     
    @RequestMapping("/event")
     public Event event() {
@@ -29,7 +30,7 @@ EventDao eventDao = new EventDao();
     public Event setEventLocation(@RequestParam(value = "location") String venueLocation) {
     	Event event = new Event();
 		event.setLocation(venueLocation);
-    	return event;
+        return (Event) eventService.getEventById(id);
     }
    
     
