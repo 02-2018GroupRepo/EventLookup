@@ -30,4 +30,13 @@ EventService eventService = new EventService();
 		eventService.getEventById(id).setLocation(venueLocation);
         return (Event)eventService.getEventById(id);
     }
+    
+    @RequestMapping("/addEvent")
+    public Event addEvent(@RequestParam("name") String name, 
+    		@RequestParam("description") String description, 
+    		@RequestParam("location") String location) {
+    	Event event = new Event(name,description,location);
+    	eventService.addEvent(event);
+    	return event;
+    }
 }
